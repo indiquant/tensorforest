@@ -42,7 +42,7 @@ We roughly split the input data as 80% train and 20% validation. Train data has 
 
 ### 2.3. Train
 
-#### 2.3.1 5-fold cross validation training/test data
+#### 2.3.1. 5-fold cross validation training/test data
 
 <br>
 
@@ -56,7 +56,7 @@ The 5-fols x-validation training works like this:
 
 <br>
 
-#### 2.3.2 Impact of number of trees
+#### 2.3.2. Impact of number of trees
 
 <br>
 
@@ -64,18 +64,27 @@ The 5-fols x-validation training works like this:
 
 <br>
 
-#### 2.3.3 Choosing max nodes
+#### 2.3.3. Choosing max nodes
 
 <br>
 
-We tried a number of values for our tuning parameter MAX NODES. As we keep on increasing the tuning parameter MAX NODES we see a sharp improvement in performance initially, and then the performance gain flattens out. The out of sample test R2 is 0.80 for 50 MAX NODES, 0.82 for 100 MAX NODES and 0.85 for 500 MAX NODES.
+We tried a number of values for our tuning parameter MAX NODES. As we keep on increasing the tuning parameter MAX NODES we see a sharp improvement in performance initially, and then the performance gain flattens out. The out of sample test R2 is 0.80 for 50 MAX NODES, 0.82 for 100 MAX NODES and 0.85 for 500 MAX NODES. 
 
-Even though 500 MAX NODES give the best performance, however 50 or 100 MAX NODES will result in a much stabler model without compromising the performance gain much. 
-
-We choose 100 MAX NODES and 100 trees for our final model.
+We choose 500 MAX NODES and 100 trees for our final model.
 
 <br>
 
 ![Impact of Max nodes](https://github.com/indiquant/tensorforest/blob/master/examples/images/max_nodes.png)
+
+<br>
+
+#### 2.3.4. Final model performance on validation set
+
+<br>
+
+![Final Model Performance](https://github.com/indiquant/tensorforest/blob/master/examples/images/prediction_logscale.png)
+
+Validation R^2 = 0.876
+log scale RMSE = 0.135
 
 <br>
