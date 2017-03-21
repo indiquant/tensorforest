@@ -85,6 +85,7 @@ We choose 500 MAX NODES and 100 trees for our final model.
 ![Final Model Performance](https://github.com/indiquant/tensorforest/blob/master/examples/images/prediction_logscale.png)
 
 Validation R^2 = 0.876
+
 log scale RMSE = 0.135
 
 <br>
