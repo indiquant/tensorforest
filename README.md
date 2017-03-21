@@ -1,12 +1,38 @@
 # tensorforest
-using google's AI stack Tensor Flow to implement random forest
+
+Google's AI technology TensorFlow goes much beyond deep learning. For classification / regression problems with smaller data size, deep learning techniques aren't suitable since deep learning models have thousands of parameters requiring large datasets. A popular model choice for smaller datasets is Random Forest Regression / Classification.
+
+In this project we explore the power of TensorFlow to fit a random forest regression model on the ![House Price Data](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) taken from kaggle. Thge dataset is small (1'460 samples) and thus random forest is the perfect candidate.
 
 ## 1. TensorFlow
+
+Imports
+```python
+import tensorflow as tf
+```
+
+Building model params for a random forest with 50 trees, max nodes = 20, number of X variables / features = 79 and number of y variables / classes = 1
+```python
+params = tf.contrib.tensor_forest.python.tensor_forest.ForestHParams(
+  num_classes=1, num_features=79, 
+  num_trees=50, max_nodes=20, regression=True).fill()
+```
+
+Training the model on (x, y) where is an n x 79 and y is an n x 1 numpy arrays
+```python
+regressor = tf.contrib.learn.TensorForestEstimator(params)
+regressor.fit(x=x, y=y, steps=100)
+```
+
+Finally predicting y from new samples of x
+```python
+y_new = regressor.predict(x_new)
+```
 
 
 ## 2. We train a random forest on the house price data from kaggle
 ### 2.1. Model
-We train a random forest regression model
+We train a random forest regression model. A random forest regression model works similarly to a random forest classification model, however, in the leaf nodes instead of assigning class labels, the model fits a regression line.
 
 ### 2.2. Input Data
 
@@ -34,7 +60,7 @@ The 5-fols x-validation training works like this:
 
 <br>
 
-![Alt Text](https://github.com/indiquant/tensorforest/blob/master/examples/images/num_trees.png)
+![Impact of Tree number](https://github.com/indiquant/tensorforest/blob/master/examples/images/num_trees.png)
 
 <br>
 
@@ -48,6 +74,6 @@ Even though 500 MAX NODES give the best performance, however 50 or 100 MAX NODES
 
 <br>
 
-![Alt Text](https://github.com/indiquant/tensorforest/blob/master/examples/images/max_nodes.png)
+![Impact of Max nodes](https://github.com/indiquant/tensorforest/blob/master/examples/images/max_nodes.png)
 
 <br>
