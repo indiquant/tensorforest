@@ -70,7 +70,9 @@ The 5-fols x-validation training works like this:
 
 We tried a number of values for our tuning parameter MAX NODES. As we keep on increasing the tuning parameter MAX NODES we see a sharp improvement in performance initially, and then the performance gain flattens out. The out of sample test R2 is 0.80 for 50 MAX NODES, 0.82 for 100 MAX NODES and 0.85 for 500 MAX NODES.
 
-Even though 500 MAX NODES give the best performance, however 50 or 100 MAX NODES will result in a much stabler model without compromising the performance gain much. We choose 50 as the value of MAX NODES for our tuning param.
+Even though 500 MAX NODES give the best performance, however 50 or 100 MAX NODES will result in a much stabler model without compromising the performance gain much. 
+
+We choose 100 MAX NODES and 100 trees for our final model.
 
 <br>
 
