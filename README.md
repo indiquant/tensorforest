@@ -2,7 +2,7 @@
 
 Google's AI technology TensorFlow goes much beyond deep learning. For classification / regression problems with smaller data size, deep learning techniques aren't suitable since deep learning models have thousands of parameters requiring large datasets. A popular model choice for smaller datasets is Random Forest Regression / Classification.
 
-In this project we explore the power of TensorFlow to fit a random forest regression model on the ![House Price Data](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) taken from kaggle. Thge dataset is small (1'460 samples) and thus random forest is the perfect candidate.
+In this project we explore the power of TensorFlow to fit a random forest regression model on the [House Price Competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) taken from kaggle. Thge dataset is small (1'460 samples) and thus random forest is the perfect candidate.
 
 ## 1. TensorFlow
 
